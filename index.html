@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fanny Andersson – Digital marknadsförare i Göteborg | Söker LIA VT27</title>
+    <meta name="description"
+        content="Fanny Andersson – student och blivande digital marknadsförare i Göteborg. Söker LIA inom digital marknadsföring våren 2027. Se mina projekt och kompetenser här">
+
+    <!-- Typografi: Oswald & Anton (Display), Playfair Display (Editorial Serif), Plus Jakarta Sans (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Sidhuvud med logotyp, navigation, temaväxlare och kontaktknapp -->
+    <header class="sidhuvud">
+        <div class="sidhuvud-innehall">
+            <a href="#hem" class="logotyp" aria-label="Fanny Andersson – Till toppen">
+                <img src="img/logo-hemsida.png" alt="FA logotyp" class="logotyp-bild" width="36" height="36">
+                <span class="logotyp-text"></span>
+            </a>
+
+            <nav aria-label="Huvudmeny">
+                <ul class="nav-lista">
+                    <li><a href="#om">Om mig</a></li>
+                    <li><a href="#fokusomraden">Fokusområden</a></li>
+                    <li><a href="#projekt">Projekt</a></li>
+                    <li><a href="#erfarenhet">Erfarenhet</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidhuvud-atgarder">
+                <!-- Sol/Måne-knapp för mörkt läge -->
+                <button id="tema" class="tema-knapp" type="button" aria-label="Byt till mörkt läge"
+                    title="Byt till mörkt läge" hidden>
+                    <!-- Måne för ljust läge (klicka för att byta till mörkt) -->
+                    <svg class="tema-ikon tema-ikon--mane" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <!-- Sol för mörkt läge (klicka för att byta till ljust) -->
+                    <svg class="tema-ikon tema-ikon--sol" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+
+                <a class="knapp knapp--header" href="#kontakt">
+                    Kontakta mig <span class="pil" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="hem">
+        <!-- Hero: Inspirerad av din Canva-design och Pinterest-1 -->
+        <section class="hero-sektion">
+            <div class="hero-canvas">
+                <div class="hero-textinnehall">
+                    <div class="hero-badge">
+                        <span class="roll">DIGITAL MARKETING SPECIALIST STUDENT</span>
+                    </div>
+
+                    <h1 class="hero-namn">FANNY<br>ANDERSSON</h1>
+
+                    <p class="hero-pitch">Söker LIA inom digital marknadsföring våren 2027</p>
+
+                    <div class="hero-accent-linje" aria-hidden="true"></div>
+
+                    <h2 class="hero-underrubrik">IHM BUSINESS SCHOOL, GÖTEBORG</h2>
+
+                    <div class="hero-knappgrupp">
+                        <a class="knapp knapp--primar" href="#om">
+                            Läs mer om mig <span class="pil" aria-hidden="true">↗</span>
+                        </a>
+                        <a class="knapp knapp--sekundar" href="#kontakt">
+                            Kontakta mig för LIA <span class="pil" aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-bild-fokus">
+                    <img src="img/Profil-2.jpeg" alt="Fanny Andersson – student inom digital marknadsföring i Göteborg"
+                        class="hero-foto" width="540" height="675">
+                </div>
+            </div>
+        </section>
+
+        <!-- Redaktionellt löpande band / ticker (Inspiration: Pinterest-1) -->
+        <div class="ticker-band" aria-hidden="true">
+            <div class="ticker-innehall">
+                <span>DIGITAL MARKETING SPECIALIST</span>
+                <span class="ticker-sep">//</span>
+                <span>DATA & ANALYTISKT TÄNKANDE</span>
+                <span class="ticker-sep">//</span>
+                <span>KREATIV IDÉUTVECKLING</span>
+                <span class="ticker-sep">//</span>
+                <span>SÖKER LIA VT27</span>
+                <span class="ticker-sep">//</span>
+                <span>IHM BUSINESS SCHOOL GÖTEBORG</span>
+                <span class="ticker-sep">//</span>
+                <span>DIGITAL MARKETING SPECIALIST</span>
+                <span class="ticker-sep">//</span>
+                <span>DATA & ANALYTISKT TÄNKANDE</span>
+                <span class="ticker-sep">//</span>
+                <span>KREATIV IDÉUTVECKLING</span>
+                <span class="ticker-sep">//</span>
+                <span>SÖKER LIA VT27</span>
+                <span class="ticker-sep">//</span>
+            </div>
+        </div>
+
+        <!-- Sektion: Om mig -->
+        <section id="om" class="sektion sektion--om">
+            <div class="sektion-huvud">
+                <span class="sektion-eyebrow">DIGITAL MARKNADSFÖRARE I GÖTEBORG</span>
+                <h2>Om mig</h2>
+            </div>
+
+            <div class="om-layout">
+                <div class="om-portratt-container">
+                    <img src="img/Profil-1.jpeg"
+                        alt="Fanny Andersson – söker LIA inom digital marknadsföring i Göteborg" class="om-foto"
+                        width="540" height="675">
+                    <div class="om-statuskort">
+                        <span class="status-indikator"></span>
+                        <div>
+                            <strong>Öppen för LIA VT27</strong>
+                            <p>6 mars – 6 juni 2027 · Göteborg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="om-berattelse">
+                    <p class="om-ingress">
+                        Hej! Jag heter Fanny och studerar till <strong>Digital Marketing Specialist</strong> på IHM
+                        Business School i Göteborg.
+                    </p>
+                    <p>
+                        Jag har även ett års tidigare studier inom digital analys, vilket har gett mig en förståelse för
+                        hur
+                        data och insikter kan användas i digital marknadsföring. Jag vill kombinera min digitala
+                        förståelse och
+                        analytiska förmåga med kreativ idéutveckling, engagerande kommunikation och varumärkesbyggande.
+                    </p>
+                    <p>
+                        Nu söker jag en LIA-plats inför våren 2027 där jag får omsätta
+                        mina kunskaper i praktiken, utvecklas tillsammans med andra och bidra med nya perspektiv.
+                    </p>
+
+                    <div class="om-styrkor">
+                        <div class="styrka-kort">
+                            <span class="styrka-nummer">01</span>
+                            <h3>Analytisk bas</h3>
+                            <p>Data, spårning och insikter som guidar träffsäkra marknadsbeslut.</p>
+                        </div>
+                        <div class="styrka-kort">
+                            <span class="styrka-nummer">02</span>
+                            <h3>Kreativt driv</h3>
+                            <p>Idéer, kampanjer och innehåll som berör och engagerar mottagaren.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion: Fokusområden (Inspiration Pinterest-2 med piller-taggar) -->
+        <section id="fokusomraden" class="sektion sektion--fokus">
+            <div class="sektion-huvud sektion-huvud--center">
+                <span class="sektion-eyebrow">KOMPETENSER & VERKTYG</span>
+                <h2>Fokusområden</h2>
+                <p class="sektion-introtext">
+                    Mina fokusområden knyter samman analys, strategi och kreativt genomförande för mätbar effekt.
+                </p>
+            </div>
+
+            <ul class="rutnat">
+                <li class="kort kort--fokus">
+                    <div class="kort-nummer" aria-hidden="true">01</div>
+                    <h3>Idéutveckling till uppföljning</h3>
+                    <p>Från strategi och kreativa idéer till kampanjgenomförande, analys och utvärdering.</p>
+                </li>
+                <li class="kort kort--fokus">
+                    <div class="kort-nummer" aria-hidden="true">02</div>
+                    <h3>Kundresor och konvertering</h3>
+                    <p>Förstå kunders beteenden och identifiera möjligheter att förbättra den digitala kundupplevelsen.
+                    </p>
+                </li>
+                <li class="kort kort--fokus">
+                    <div class="kort-nummer" aria-hidden="true">03</div>
+                    <h3>Datadriven marknadsföring</h3>
+                    <p>Kombinera kreativ marknadsföring med mätning, analys och insikter för att förstå vad som
+                        fungerar.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sektion: Projekt -->
+        <section id="projekt" class="sektion sektion--projekt">
+            <div class="sektion-huvud">
+                <span class="sektion-eyebrow">PORTFOLIO</span>
+                <h2>Projekt</h2>
+                <p class="sektion-introtext">
+                    Här kommer mina projekt att presenteras. Dessa projekt är skapade under min utbildning till Digital
+                    Marketing Specialist på IHM Business School i Göteborg.
+                </p>
+            </div>
+
+            <div class="projekt-rutnat">
+                <article class="kort kort--projekt">
+                    <div class="projekt-bildram">
+                        <img src="img/projekt-1.jpeg" alt="Skärmbild av webbprototypen för VIBE" class="projekt-bild"
+                            width="600" height="400">
+                        <span class="projekt-kategori">Grupparbete · Webbprototyp</span>
+                    </div>
+                    <div class="projekt-innehall">
+                        <div class="projekt-rubrikrad">
+                            <h3>VIBE</h3>
+                            <span class="projekt-kurs">Kurs: AI och tech · IHM</span>
+                        </div>
+                        <p class="projekt-ingress">
+                            Ett fiktivt koncept för en AI-driven plattform som hjälper användare att upptäcka konserter,
+                            festivaler och nya artister utifrån sin musiksmak.
+                        </p>
+                        <p class="projekt-beskrivning">
+                            I projektet tog vi fram affärsidén, gjorde en marknadsanalys och tog fram sitemap och
+                            wireframe. Med hjälp av AI skapade vi sedan en webbprototyp i Google AI Studio.
+                        </p>
+                        <div class="projekt-taggar">
+                            <span class="projekt-tagg">AI & Tech</span>
+                            <span class="projekt-tagg">Google AI Studio</span>
+                            <span class="projekt-tagg">Marknadsanalys</span>
+                            <span class="projekt-tagg">Wireframe</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="kort kort--projekt">
+                    <div class="projekt-bildram">
+                        <img src="img/project-2.jpg"
+                            alt="Bild på tjej som arbetar med digital marknadsföring och webbdesign"
+                            class="projekt-bild" width="600" height="400">
+                        <span class="projekt-kategori">Kodning, design & innehåll</span>
+                    </div>
+                    <div class="projekt-innehall">
+                        <div class="projekt-rubrikrad">
+                            <h3>Den här sajten</h3>
+                            <span class="projekt-kurs">Personlig portfolio</span>
+                        </div>
+                        <p class="projekt-ingress">
+                            Min personliga portfolio skapad för att presentera mina kunskaper, projekt och erfarenheter.
+                        </p>
+                        <p class="projekt-beskrivning">
+                            Byggd för hand med HTML, CSS och JavaScript med AI som kodstöd. Fokus på ren skandinavisk
+                            design, redaktionell typografi, hög tillgänglighet, responsivitet och anpassat mörkt läge.
+                        </p>
+                        <div class="projekt-taggar">
+                            <span class="projekt-tagg">HTML & CSS</span>
+                            <span class="projekt-tagg">JavaScript</span>
+                            <span class="projekt-tagg">Responsiv design</span>
+                            <span class="projekt-tagg">AI-kodstöd</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sektion: Erfarenhet & Utbildning -->
+        <section id="erfarenhet" class="sektion sektion--erfarenhet">
+            <div class="sektion-huvud">
+                <span class="sektion-eyebrow">BAKGRUND</span>
+                <h2>Erfarenhet & Utbildning</h2>
+            </div>
+
+            <div class="erfarenhet-layout">
+                <!-- Utbildning -->
+                <div class="erfarenhet-kolumn">
+                    <div class="kolumn-rubrikrad">
+                        <span class="kolumn-ikon" aria-hidden="true">🎓</span>
+                        <h3>Utbildning</h3>
+                    </div>
+
+                    <div class="kort-stapel">
+                        <article class="kort kort--tidslinje">
+                            <div class="tidslinje-period">Aug 2026 – Jun 2028</div>
+                            <h4>Digital Marketing Specialist</h4>
+                            <p class="tidslinje-skola">IHM Business School, Göteborg</p>
+                            <p>
+                                Utbildningen ger mig kunskaper inom digital strategi, SEO, content marketing, digital
+                                annonsering
+                                och sociala medier. Jag utvecklar både strategiska och praktiska färdigheter inom
+                                digital
+                                marknadsföring, kampanjhantering och dataanalys, med inslag av AI, programmatic
+                                advertising och
+                                marketing automation.
+                            </p>
+                        </article>
+
+                        <article class="kort kort--tidslinje">
+                            <div class="tidslinje-period">Aug 2025 – Jun 2026</div>
+                            <h4>Digital Analytics Specialist</h4>
+                            <p class="tidslinje-skola">IHM Business School, Göteborg</p>
+                            <p>
+                                Utbildningen gav mig kunskaper inom digital analys, datainsamling, spårning och
+                                konverteringsoptimering. Jag fick även en grund inom datadrivet affärsmannaskap,
+                                mätplanering
+                                och scriptspråk, med fokus på hur data och insikter kan användas för att förstå
+                                användarbeteenden och utveckla digitala kundupplevelser.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Arbetslivserfarenhet -->
+                <div class="erfarenhet-kolumn">
+                    <div class="kolumn-rubrikrad">
+                        <span class="kolumn-ikon" aria-hidden="true">💼</span>
+                        <h3>Arbetslivserfarenhet</h3>
+                    </div>
+
+                    <div class="kort-stapel">
+                        <article class="kort kort--tidslinje">
+                            <div class="tidslinje-period">Dec 2022 – Nu</div>
+                            <h4>Pool Club Host</h4>
+                            <p class="tidslinje-skola">Jacy'z Hotel & Resort</p>
+                            <p>
+                                Ansvarar för gästupplevelse, bokningar, incheckning och försäljning i en exklusiv miljö,
+                                med
+                                fokus på service, professionellt bemötande och kundkontakt.
+                            </p>
+                        </article>
+
+                        <article class="kort kort--tidslinje">
+                            <div class="tidslinje-period">Aug 2022 – Dec 2022</div>
+                            <h4>Service Host</h4>
+                            <p class="tidslinje-skola">Scandic Hotel Mölndal</p>
+                            <p>
+                                Arbetade med frukostservering med fokus på gästbemötande och service. Samarbetade i ett
+                                högt
+                                arbetstempo där struktur, effektivitet och en positiv gästupplevelse stod i centrum.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sektion: Färdigheter / Detta lär jag mig om -->
+        <section id="kompetenser" class="sektion sektion--kompetenser">
+            <div class="sektion-huvud sektion-huvud--center">
+                <span class="sektion-eyebrow">VAD JAG KAN ERBJUDA</span>
+                <h2>Detta lär jag mig om</h2>
+            </div>
+            <!-- Interaktiva piller-taggar inspirerade av Pinterest-2 -->
+            <div class="piller-samling">
+                <span class="piller-tagg">AI & Tech</span>
+                <span class="piller-tagg">Paid Media</span>
+                <span class="piller-tagg">SEO</span>
+                <span class="piller-tagg">Google Ads</span>
+                <span class="piller-tagg">Juridik för digitala marknadsförare</span>
+                <span class="piller-tagg">Tracking & Digital analys</span>
+                <span class="piller-tagg">Pitch, storytelling & presentation</span>
+                <span class="piller-tagg">Programmatic advertising</span>
+                <span class="piller-tagg">Inbound marketing</span>
+                <span class="piller-tagg">Marketing automation</span>
+                <span class="piller-tagg">SEM</span>
+                <span class="piller-tagg">Content & Influencer Marketing</span>
+                <span class="piller-tagg">Budget & kalkylering för digitala marknadsförare</span>
+                <span class="piller-tagg">Digital strategi</span>
+                <span class="piller-tagg">Kampanjhantering</span>
+            </div>
+        </section>
+
+        <!-- Sektion: Kontakt / Call to action -->
+        <section id="kontakt" class="sektion sektion--kontakt">
+            <div class="kontakt-banner">
+                <div class="kontakt-intro">
+                    <span class="sektion-eyebrow sektion-eyebrow--ljus">HÖR GÄRNA AV DIG</span>
+                    <h2>Vi hörs!</h2>
+                    <p>
+                        Vill du prata vidare, veta mer om mig eller erbjuda en LIA-plats?
+                        Hör av dig här, via mail eller på LinkedIn.
+                    </p>
+                </div>
+
+                <div class="kontakt-kanaler">
+                    <a href="mailto:fannyandersson28@gmail.com" class="kontakt-kort">
+                        <div class="kontakt-ikon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="kontakt-detalj">
+                            <span class="kontakt-etikett">Skicka ett mail</span>
+                            <span class="kontakt-lank">fannyandersson28@gmail.com</span>
+                        </div>
+                        <span class="kontakt-pil" aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/fanny-andersson-a1593324a/" target="_blank" rel="noopener"
+                        class="kontakt-kort">
+
+                        <div class="kontakt-ikon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+
+                        <div class="kontakt-detalj">
+                            <span class="kontakt-etikett">Nätverka & följ</span>
+                            <span class="kontakt-lank">Fanny Andersson på LinkedIn</span>
+                        </div>
+
+                        <span class="kontakt-pil" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sidfot">
+        <p>© 2026 Fanny Andersson · Byggd för hand med HTML, CSS och JavaScript med AI som kodstöd.</p>
+    </footer>
+</body>
+
+</html>

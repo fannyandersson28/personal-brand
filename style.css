@@ -1,0 +1,1179 @@
+/* ==========================================================================
+   Fanny Andersson – Portfolio CSS
+   Stil: Skandinavisk modern, redaktionell typografi, Canva-1 & Pinterest-layout
+   ========================================================================== */
+
+/* 1 · Box-modellen & grundinställningar */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* 2 · Designsystem & CSS-variabler */
+:root {
+    /* Typografi */
+    --font-display: 'Oswald', 'Anton', -apple-system, sans-serif;
+    --font-editorial: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Accentfärger (Enligt önskemål: #3155e7 / #4655e8) */
+    --accent: #3155e7;
+    --accent-hover: #2343c4;
+    --accent-soft: rgba(49, 85, 231, 0.08);
+    --accent-glow: rgba(49, 85, 231, 0.22);
+
+    /* Ljust läge: Varm skandinavisk sand/greige bas */
+    --text: #141518;
+    --text-muted: #575c68;
+    --text-light: #ffffff;
+    --yta: #FAF7F2;
+    --yta-kort: #FFFFFF;
+    --yta-sand: #ECE7DF;
+    --yta-sand-djup: #E2DCD3;
+    --kant: #E5DFD4;
+    --kant-subtil: rgba(20, 21, 24, 0.08);
+
+    /* Skuggor */
+    --skugga-mjuk: 0 4px 20px -2px rgba(20, 21, 24, 0.06);
+    --skugga-kort: 0 12px 32px -4px rgba(20, 21, 24, 0.08);
+    --skugga-hov: 0 16px 36px -6px rgba(49, 85, 231, 0.16);
+
+    /* Radier */
+    --radie-piller: 9999px;
+    --radie-lg: 24px;
+    --radie-md: 16px;
+    --radie-sm: 10px;
+
+    /* Övrigt */
+    --overgang: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3 · Mörkt läge (body.morkt) */
+body.morkt {
+    --accent: #4655e8;
+    --accent-hover: #5d6cf0;
+    --accent-soft: rgba(70, 85, 232, 0.15);
+    --accent-glow: rgba(70, 85, 232, 0.35);
+
+    --text: #F3F4F6;
+    --text-muted: #9DA4B4;
+    --text-light: #ffffff;
+    --yta: #0E1015;
+    --yta-kort: #151821;
+    --yta-sand: #1B202B;
+    --yta-sand-djup: #232938;
+    --kant: #272E3E;
+    --kant-subtil: rgba(255, 255, 255, 0.08);
+
+    --skugga-mjuk: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+    --skugga-kort: 0 12px 32px -4px rgba(0, 0, 0, 0.55);
+    --skugga-hov: 0 16px 36px -6px rgba(70, 85, 232, 0.28);
+}
+
+/* 4 · Grundtypografi & basstil */
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--text);
+    background-color: var(--yta);
+    transition: background-color var(--overgang), color var(--overgang);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text);
+    margin-top: 0;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    line-height: 1.15;
+}
+
+h3 {
+    font-size: 1.375rem;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--overgang);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tillgängligt fokus */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: var(--radie-sm);
+}
+
+/* 5 · Sidhuvud & Navigation */
+.sidhuvud {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.9);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--kant-subtil);
+    transition: background-color var(--overgang), border-color var(--overgang);
+}
+
+body.morkt .sidhuvud {
+    background: rgba(14, 16, 21, 0.9);
+}
+
+.sidhuvud-innehall {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.logotyp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-size: 0.95rem;
+}
+
+.logotyp-bild {
+    border-radius: 6px;
+    transition: filter var(--overgang);
+}
+
+body.morkt .logotyp-bild {
+    filter: invert(1);
+}
+
+.nav-lista {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-lista a {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-lista a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width var(--overgang);
+}
+
+.nav-lista a:hover::after {
+    width: 100%;
+}
+
+.sidhuvud-atgarder {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Sol/Måne-knapp för mörkt läge */
+.tema-knapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: var(--yta-kort);
+    border: 1px solid var(--kant);
+    border-radius: 50%;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform var(--overgang), border-color var(--overgang), background-color var(--overgang);
+}
+
+.tema-knapp:hover {
+    transform: rotate(18deg) scale(1.05);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.tema-ikon {
+    display: block;
+    transition: transform var(--overgang);
+}
+
+.tema-ikon--sol {
+    display: none;
+}
+
+.tema-ikon--mane {
+    display: block;
+}
+
+body.morkt .tema-ikon--sol {
+    display: block;
+}
+
+body.morkt .tema-ikon--mane {
+    display: none;
+}
+
+/* 6 · Knappar */
+.knapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radie-piller);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform var(--overgang), box-shadow var(--overgang), background-color var(--overgang), border-color var(--overgang), color var(--overgang);
+    cursor: pointer;
+}
+
+.knapp .pil {
+    font-size: 1.15em;
+    line-height: 1;
+    transition: transform var(--overgang);
+}
+
+.knapp:hover .pil {
+    transform: translate(2px, -2px);
+}
+
+.knapp--primar {
+    background-color: var(--accent);
+    color: var(--text-light);
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 24px -4px var(--accent-glow);
+}
+
+.knapp--primar:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -4px var(--accent-glow);
+}
+
+.knapp--sekundar {
+    background-color: transparent;
+    color: var(--text);
+    border: 2px solid var(--text);
+}
+
+.knapp--sekundar:hover {
+    background-color: var(--text);
+    color: var(--yta);
+    transform: translateY(-2px);
+}
+
+.knapp--header {
+    background-color: var(--accent);
+    color: var(--text-light);
+    border: 1px solid var(--accent);
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+.knapp--header:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+/* 7 · Hero-sektion (Canva-1 & Pinterest-1) */
+.hero-sektion {
+    max-width: 1320px;
+    margin: 1.5rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.hero-canvas {
+    position: relative;
+    border-radius: var(--radie-lg);
+    background-color: var(--yta-sand);
+    border: 1px solid var(--kant-subtil);
+    box-shadow: var(--skugga-kort);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.5rem 1.75rem;
+}
+
+.hero-textinnehall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Badge / Eyebrow */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.badge-prick {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.roll {
+    font-weight: 800;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* Display-rubrik: Oswald (tunnare) / Anton */
+.hero-namn {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(3.2rem, 7vw, 5.75rem);
+    line-height: 0.94;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+}
+
+/* Pitch / LIA-status */
+.hero-pitch {
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(1.125rem, 1.8vw, 1.45rem);
+    line-height: 1.4;
+    color: var(--text);
+    margin: 0 0 1.25rem;
+    max-width: 36ch;
+}
+
+.hero-accent-linje {
+    width: 48px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+}
+
+.hero-underrubrik {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 2rem;
+}
+
+.hero-knappgrupp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-bild-fokus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.hero-foto {
+    width: 100%;
+    max-width: 360px;
+    max-height: 460px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radie-lg);
+    box-shadow: var(--skugga-kort);
+    border: 1px solid var(--kant-subtil);
+    transition: transform var(--overgang), box-shadow var(--overgang);
+}
+
+.hero-foto:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--skugga-hov);
+}
+
+/* Desktop-layout för Hero: Text till vänster och bild till höger */
+@media (min-width: 960px) {
+    .hero-canvas {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+        padding: 4rem 4.5rem;
+        min-height: 520px;
+    }
+
+    .hero-bild-fokus {
+        justify-content: flex-end;
+    }
+
+    .hero-foto {
+        max-width: 380px;
+        max-height: 480px;
+    }
+}
+
+@media (max-width: 959px) {
+    .hero-canvas {
+        padding: 2.25rem 1.25rem;
+        gap: 2rem;
+    }
+
+    .hero-bild-fokus {
+        order: -1;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-foto {
+        max-width: 280px;
+        max-height: 350px;
+    }
+}
+
+/* 8 · Ticker band (Inspiration: Pinterest-1) */
+.ticker-band {
+    width: 100%;
+    background-color: var(--yta-sand-djup);
+    border-top: 1px solid var(--kant);
+    border-bottom: 1px solid var(--kant);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.875rem 0;
+}
+
+.ticker-innehall {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text);
+    animation: marquee 30s linear infinite;
+}
+
+.ticker-sep {
+    color: var(--accent);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticker-innehall {
+        animation: none;
+    }
+}
+
+/* 9 · Gemensam sektionsstil */
+.sektion {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
+
+.sektion-huvud {
+    margin-bottom: 3rem;
+}
+
+.sektion-huvud--center {
+    text-align: center;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sektion-eyebrow {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.sektion-eyebrow--ljus {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sektion-introtext {
+    font-size: 1.1875rem;
+    color: var(--text-muted);
+    max-width: 60ch;
+    margin-top: 0.75rem;
+}
+
+/* 10 · Sektion: Om mig */
+.om-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 900px) {
+    .om-layout {
+        grid-template-columns: minmax(280px, 360px) 1fr;
+        gap: 4.5rem;
+    }
+}
+
+.om-portratt-container {
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+    .om-portratt-container {
+        margin: 0;
+    }
+}
+
+.om-foto {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radie-lg);
+    box-shadow: var(--skugga-kort);
+    border: 1px solid var(--kant-subtil);
+}
+
+.om-statuskort {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.875rem 1.125rem;
+    border-radius: var(--radie-md);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--skugga-kort);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #141518;
+}
+
+body.morkt .om-statuskort {
+    background: rgba(21, 24, 33, 0.92);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+}
+
+.status-indikator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    flex-shrink: 0;
+}
+
+.om-statuskort strong {
+    display: block;
+    font-size: 0.9375rem;
+}
+
+.om-statuskort p {
+    font-size: 0.8125rem;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.om-ingress {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.om-berattelse p {
+    font-size: 1.0625rem;
+    margin-bottom: 1.25rem;
+}
+
+.om-berattelse strong {
+    color: var(--text);
+}
+
+.om-styrkor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--kant);
+}
+
+@media (min-width: 600px) {
+    .om-styrkor {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.styrka-kort {
+    background: var(--yta-sand);
+    padding: 1.5rem;
+    border-radius: var(--radie-md);
+    border: 1px solid var(--kant-subtil);
+}
+
+.styrka-nummer {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.styrka-kort h4 {
+    margin-bottom: 0.35rem;
+}
+
+.styrka-kort p {
+    font-size: 0.9375rem;
+    margin: 0;
+}
+
+/* 11 · Sektion: Fokusområden (Pinterest-2 inspiration) */
+.piller-samling {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 3.5rem;
+}
+
+.piller-tagg {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background: var(--yta-kort);
+    color: var(--text);
+    border: 1.5px solid var(--kant);
+    border-radius: var(--radie-piller);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    box-shadow: var(--skugga-mjuk);
+    transition: transform var(--overgang), border-color var(--overgang), background-color var(--overgang);
+    cursor: default;
+}
+
+.piller-tagg:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.piller-tagg--accent {
+    background: var(--accent);
+    color: var(--text-light);
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px -2px var(--accent-glow);
+}
+
+.piller-tagg--accent:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--text-light);
+}
+
+.rutnat {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .rutnat {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.kort {
+    background: var(--yta-kort);
+    padding: 2.25rem;
+    border-radius: var(--radie-lg);
+    border: 1px solid var(--kant);
+    box-shadow: var(--skugga-mjuk);
+    transition: transform var(--overgang), box-shadow var(--overgang), border-color var(--overgang);
+}
+
+.kort:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--skugga-hov);
+    border-color: var(--accent);
+}
+
+.kort--fokus {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.kort-nummer {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.kort--fokus h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* 12 · Sektion: Projekt */
+.projekt-rutnat {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 860px) {
+    .projekt-rutnat {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.kort--projekt {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--yta-kort);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-lg);
+    box-shadow: var(--skugga-mjuk);
+    transition: transform var(--overgang), box-shadow var(--overgang), border-color var(--overgang);
+}
+
+.kort--projekt:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--skugga-hov);
+    border-color: var(--accent);
+}
+
+.projekt-bildram {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--yta-sand);
+}
+
+.projekt-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.4s ease;
+}
+
+.kort--projekt:hover .projekt-bild {
+    transform: scale(1.04);
+}
+
+.projekt-kategori {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(20, 21, 24, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radie-piller);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.projekt-innehall {
+    padding: 2.25rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.projekt-rubrikrad {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.projekt-innehall h3 {
+    margin: 0;
+    font-size: 1.625rem;
+    color: var(--text);
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+}
+
+.projekt-kurs {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.projekt-ingress {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.projekt-beskrivning {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.projekt-taggar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--kant-subtil);
+}
+
+.projekt-tagg {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    background: var(--yta-sand);
+    color: var(--text);
+    border: 1px solid var(--kant-subtil);
+    border-radius: var(--radie-piller);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    transition: background-color var(--overgang), color var(--overgang), border-color var(--overgang);
+}
+
+.kort--projekt:hover .projekt-tagg {
+    border-color: rgba(49, 85, 231, 0.25);
+}
+
+/* 13 · Sektion: Erfarenhet & Utbildning */
+.erfarenhet-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 900px) {
+    .erfarenhet-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+.kolumn-rubrikrad {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.kolumn-ikon {
+    font-size: 1.5rem;
+}
+
+.kolumn-rubrikrad h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.kort-stapel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.kort--tidslinje {
+    position: relative;
+    border-left: 4px solid var(--accent);
+    padding: 1.75rem 2rem;
+}
+
+.tidslinje-period {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.kort--tidslinje h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.tidslinje-skola {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+/* 14 · Sektion: Kontakt (Call to action banner) */
+.kontakt-banner {
+    background: linear-gradient(135deg, var(--accent) 0%, #1e3bb5 100%);
+    border-radius: var(--radie-lg);
+    padding: 4rem 2rem;
+    color: var(--text-light);
+    box-shadow: 0 20px 48px -12px var(--accent-glow);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 960px) {
+    .kontakt-banner {
+        grid-template-columns: 1fr 1fr;
+        padding: 5rem 4rem;
+    }
+}
+
+.kontakt-intro h2 {
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.kontakt-intro p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.1875rem;
+    max-width: 44ch;
+}
+
+.kontakt-kanaler {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.kontakt-kort {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radie-md);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color var(--overgang), transform var(--overgang), border-color var(--overgang);
+}
+
+.kontakt-kort:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(6px);
+    color: #ffffff;
+}
+
+.kontakt-ikon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.kontakt-detalj {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.kontakt-etikett {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.kontakt-lank {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+.kontakt-pil {
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: transform var(--overgang);
+}
+
+.kontakt-kort:hover .kontakt-pil {
+    transform: translate(3px, -3px);
+}
+
+/* 15 · Sidfot */
+.sidfot {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--kant-subtil);
+    background: var(--yta-sand);
+    transition: background-color var(--overgang);
+}
+
+.sidfot p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0 auto;
+}
+
+/* 16 · Responsivitet på små skärmar (Mobil) */
+@media (max-width: 767px) {
+    .sidhuvud-innehall {
+        flex-wrap: wrap;
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-lista {
+        order: 3;
+        width: 100%;
+        gap: 1rem;
+        overflow-x: auto;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--kant-subtil);
+    }
+
+    .nav-lista a {
+        font-size: 0.8125rem;
+        white-space: nowrap;
+    }
+
+    .knapp--header {
+        display: none;
+    }
+
+    .hero-sektion {
+        margin-top: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .hero-textinnehall {
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-knappgrupp {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-knappgrupp .knapp {
+        width: 100%;
+    }
+
+    .sektion {
+        padding: 3.5rem 1rem;
+    }
+}
