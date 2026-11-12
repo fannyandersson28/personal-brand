@@ -1131,15 +1131,6 @@ body.morkt .om-statuskort {
     min-height: 340px;
 }
 
-.kontakt-formular-rubrik {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #141518;
-    margin-bottom: 1.25rem;
-}
-
 /* 15 · Sidfot */
 .sidfot {
     padding: 3rem 1.5rem;
